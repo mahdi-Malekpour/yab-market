@@ -6,7 +6,6 @@ export default function Home() {
           خوش آمدید!
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300 text-center">
-          این صفحه اصلی ساده است و آماده‌ی اضافه کردن محصولات و دسته‌بندی‌ها می‌باشد.
         </p>
         <p className="text-lg text-gray-700 dark:text-gray-300 text-center mt-4">
           سلام من مهدی هستم — Hello, I am Mahdi.
