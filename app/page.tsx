@@ -9,7 +9,7 @@ export default function Home() {
           این صفحه اصلی ساده است و آماده‌ی اضافه کردن محصولات و دسته‌بندی‌ها می‌باشد.
         </p>
         <p className="text-lg text-gray-700 dark:text-gray-300 text-center mt-4">
-          سلام من مهدی هستم — Hello, I am Mahdi.
+          MAHDI MK
         </p>
       </main>
     </div>
