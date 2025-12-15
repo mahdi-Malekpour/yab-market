@@ -9,8 +9,8 @@ const categories = [
 
 export default function Categories() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-12">
-      <h2 className="text-xl font-semibold text-zinc-900 mb-6">
+    <section className="mx-auto max-w-7xl px-6 py-12">
+      <h2 className="text-xl font-semibold text-zinc-900 dark:text-white mb-6">
         دسته‌بندی‌ها
       </h2>
 
@@ -18,7 +18,7 @@ export default function Categories() {
         {categories.map((cat) => (
           <div
             key={cat}
-            className="rounded-xl bg-white border border-zinc-200 py-6 text-center text-sm font-medium text-zinc-700 hover:shadow-md transition cursor-pointer"
+            className="rounded-xl bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 py-6 text-center text-sm font-medium text-zinc-700 dark:text-zinc-200 hover:border-orange-400 hover:text-orange-500 transition cursor-pointer"
           >
             {cat}
           </div>
