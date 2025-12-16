@@ -1,46 +1,48 @@
+"use client";
+
 import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative bg-white dark:bg-zinc-900 overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        
+    <section className="relative overflow-hidden bg-gradient-to-b from-white to-zinc-50">
+      <div className="mx-auto max-w-7xl px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
+
         {/* Text */}
-        <div>
-          <span className="inline-block mb-4 rounded-full bg-orange-100 text-orange-600 px-4 py-1 text-sm font-medium dark:bg-orange-500/10 dark:text-orange-400">
+        <div className="text-center md:text-right">
+          <span className="inline-block mb-4 rounded-full bg-orange-100 text-orange-600 px-4 py-1 text-sm font-medium">
             یاب | مقایسه هوشمند قیمت
           </span>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white leading-tight">
-            همه فروشگاه‌ها  
+          <h1 className="text-4xl md:text-5xl font-extrabold text-zinc-900 leading-tight">
+            همه فروشگاه‌ها
             <span className="text-orange-500"> یک‌جا</span>
           </h1>
 
-          <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 max-w-xl">
-            قیمت محصولات فروشگاه‌های مختلف رو مقایسه کن و بهترین انتخاب رو داشته باش
+          <p className="mt-6 text-base md:text-lg text-zinc-600 max-w-xl mx-auto md:mx-0">
+            محصولات فروشگاه‌های مختلف رو ببین، مقایسه کن و مستقیم وارد سایت فروشنده شو
           </p>
 
           {/* Search */}
-          <div className="mt-8 flex max-w-xl">
+          <div className="mt-8 flex max-w-xl mx-auto md:mx-0 shadow-lg rounded-xl overflow-hidden">
             <input
               type="text"
               placeholder="جستجوی محصول..."
-              className="flex-1 rounded-r-xl border border-zinc-200 px-5 py-4 text-sm focus:outline-none dark:bg-zinc-800 dark:border-zinc-700 dark:text-white"
+              className="flex-1 px-5 py-4 text-sm outline-none border border-zinc-200"
             />
-            <button className="rounded-l-xl bg-orange-500 px-6 text-white font-medium hover:bg-orange-600 transition">
+            <button className="bg-orange-500 px-6 text-white font-semibold hover:bg-orange-600 transition">
               جستجو
             </button>
           </div>
         </div>
 
         {/* Image */}
-        <div className="relative">
+        <div className="relative flex justify-center">
           <Image
             src="/hero.png"
             alt="YAB hero"
-            width={520}
-            height={520}
-            className="rounded-2xl shadow-xl"
+            width={480}
+            height={480}
+            className="rounded-3xl shadow-2xl"
             priority
           />
         </div>
