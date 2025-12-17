@@ -8,10 +8,12 @@ interface Product {
   title: string;
   price?: string;
   store?: string;
-  image: string;
+  image?: string;
   link?: string;
+  className?: string;
 }
 
+// محصولات تستی وقتی API جواب نده
 const fallbackProducts: Product[] = [
   { id: 1, title: "iPhone 13", price: "32,500,000", store: "دیجی‌کالا", image: "/fallback1.png", link: "#" },
   { id: 2, title: "Galaxy S23", price: "28,900,000", store: "ترب", image: "/fallback2.png", link: "#" },
@@ -25,16 +27,21 @@ export default function FeaturedProducts() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const res = await fetch("http://127.0.0.1:8000/scrape?url=https://www.digikala.com/search/category-mobile-phone/&scrolls=5");
+        const res = await fetch(
+          "http://127.0.0.1:8000/scrape?url=https://www.digikala.com/search/category-mobile-phone/&scrolls=5"
+        );
         const data = await res.json();
-        setProducts(data.products?.map((p: any, i: number) => ({
-          id: i,
-          title: p.title,
-          image: p.image,
-          link: p.link,
-          price: p.price,
-          store: p.store,
-        })) || fallbackProducts);
+
+        setProducts(
+          data.products?.map((p: any, i: number) => ({
+            id: i,
+            title: p.title || "بدون عنوان",
+            image: p.image || "/fallback1.png",
+            link: p.link || "#",
+            price: p.price || "ناموجود",
+            store: p.store || "نامشخص",
+          })) || fallbackProducts
+        );
       } catch (err) {
         console.error(err);
         setProducts(fallbackProducts);
@@ -46,11 +53,13 @@ export default function FeaturedProducts() {
     fetchProducts();
   }, []);
 
-  if (loading) return <p className="text-center py-10 text-zinc-700">در حال دریافت محصولات...</p>;
+  if (loading)
+    return <p className="text-center py-10 text-zinc-700">در حال دریافت محصولات...</p>;
 
   return (
     <section className="mx-auto max-w-6xl px-6 py-16 bg-white">
       <h2 className="text-xl font-semibold text-zinc-900 mb-8">محصولات پیشنهادی</h2>
+
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
         {products.map((product) => (
           <ProductCard

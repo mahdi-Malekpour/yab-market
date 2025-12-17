@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = ".next"  # Netlify باید خروجی Next.js رو از اینجا بخونه
+  functions = "netlify/functions" # اگر فانکشن داری
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
